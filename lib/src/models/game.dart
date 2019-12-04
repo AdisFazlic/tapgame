@@ -1,15 +1,26 @@
-import 'package:boloids/src/models/levels/level1.dart';
+import 'package:boloids/src/models/level/level.dart';
 import 'package:flutter/foundation.dart';
-import 'package:boloids/src/models/levels/level.dart';
+import 'package:boloids/src/models/level/level.dart';
 
 class Game {
+  
+  // Level Array contains all Levels that are/have been played in this game
+  // TODO: store instances of the Levels inside this array
+
   List<Level> levels = [];
-  int currentLevelIndex = 0;
+  int currentLevelIndex = 0; 
+
+
+
+  // new variables
+
+  // TODO: create instance of Game Settings
+  // Refers to new Class GameSettings, that defines the mode of game play
 
   Game({@required this.levels});
 
   Game.withDefaultLevels() {
-    levels.add(Level1());
+    levels.add(Level.withDefaultTarget());
   }
 
   Level get currentLevel => levels[currentLevelIndex];
